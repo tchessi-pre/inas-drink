@@ -131,15 +131,15 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ duration: 1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
               className="relative w-full h-full"
-              style={{
-                maskImage:
-                  'radial-gradient(ellipse 68% 68% at 50% 48%, black 55%, transparent 100%)',
-                WebkitMaskImage:
-                  'radial-gradient(ellipse 68% 68% at 50% 48%, black 55%, transparent 100%)',
-              }}
+              // style={{
+              //   maskImage:
+              //     'radial-gradient(ellipse 68% 68% at 50% 48%, black 55%, transparent 100%)',
+              //   WebkitMaskImage:
+              //     'radial-gradient(ellipse 68% 68% at 50% 48%, black 55%, transparent 100%)',
+              // }}
             >
               <Image
-                src="/images/bouteilles-inas3.png"
+                src="/images/bouteilles-inas4.png"
                 alt="Les quatre boissons INA'S DRINK : Bissap, Tamarin, Gingembre, Baobab"
                 fill
                 className="object-contain"

@@ -3,9 +3,9 @@
 import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
-import Image from 'next/image'
 import { ShoppingCart, Menu, X } from 'lucide-react'
 import { useCart } from '@/lib/cart'
+import Logo from '@/components/Logo'
 import { NAV_LINKS } from '@/lib/data'
 import { cn } from '@/lib/utils'
 
@@ -52,20 +52,7 @@ export default function Navbar() {
             href="#accueil"
             className="flex flex-col items-center leading-none group absolute left-1/2 -translate-x-1/2 md:static md:left-auto md:translate-x-0 md:items-start"
           >
-            <span className="font-logo text-3xl text-forest-900 inline-flex items-center uppercase">
-              Ina
-              <Image
-                src="/images/leaf3.png"
-                alt=""
-                width={20}
-                height={20}
-                className="-translate-y-1 select-none pointer-events-none"
-              />
-              s
-            </span>
-            <span className="text-[10px] text-center font-semibold tracking-[0.3em] text-gold-600 uppercase mt-1">
-              Drink
-            </span>
+            <Logo size="lg" />
           </Link>
 
           {/* Desktop nav */}
@@ -142,20 +129,7 @@ export default function Navbar() {
             >
               <div className="flex items-center justify-between p-6 border-b border-cream-300">
                 <div className="flex flex-col leading-none">
-                  <span className="font-logo text-2xl text-forest-900 inline-flex items-center">
-                    Ina
-                    <Image
-                      src="/images/leaf.png"
-                      alt=""
-                      width={12}
-                      height={12}
-                      className="-translate-y-2.5 rotate-12 select-none pointer-events-none"
-                    />
-                    s
-                  </span>
-                  <span className="text-[9px] font-semibold tracking-[0.3em] text-gold-600 uppercase -mt-1 ml-0.5">
-                    Drink
-                  </span>
+                  <Logo size="sm" />
                 </div>
                 <button
                   onClick={() => setMobileOpen(false)}
