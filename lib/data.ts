@@ -1,4 +1,5 @@
-export type ProductId = 'bissap' | 'gingembre' | 'tamarin' | 'baobab'
+export type FlavorKey = 'bissap' | 'gingembre' | 'tamarin' | 'baobab'
+export type ProductId = FlavorKey | `${FlavorKey}-1l`
 
 export interface Product {
   id: ProductId
@@ -8,7 +9,7 @@ export interface Product {
   benefits: string[]
   volume: string
   price: number
-  colorKey: ProductId
+  colorKey: FlavorKey
   accent: string
   bottleImage: string
   ingredientImage: string
@@ -76,6 +77,13 @@ export const PRODUCTS: Product[] = [
       'https://images.pexels.com/photos/2294471/pexels-photo-2294471.jpeg?auto=compress&cs=tinysrgb&w=900',
   },
 ]
+
+export const PRODUCTS_1L: Product[] = PRODUCTS.map(product => ({
+  ...product,
+  id: `${product.colorKey}-1l`,
+  volume: '1 L',
+  price: 4.5,
+}))
 
 export const PACK_PRICE = 9.0
 export const PACK_ORIGINAL_PRICE = 10.0
@@ -163,8 +171,9 @@ export const FAQS = [
 ]
 
 export const NAV_LINKS = [
+  { label: 'Accueil', href: '#accueil' },
   { label: 'Nos Produits', href: '#produits' },
-  { label: 'Pack Découverte', href: '#pack' },
-  { label: 'Notre Histoire', href: '#histoire' },
-  { label: 'FAQ', href: '#faq' },
+  { label: 'À Propos', href: '#histoire' },
+  { label: 'Nos Engagements', href: '#engagements' },
+  { label: 'Contact', href: '#contact' },
 ]

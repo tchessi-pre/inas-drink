@@ -3,9 +3,10 @@
 import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
-import { ShoppingCart, Menu, X, Leaf } from 'lucide-react'
+import Image from 'next/image'
+import { ShoppingCart, Menu, X } from 'lucide-react'
 import { useCart } from '@/lib/cart'
-import { NAV_LINKS, BRAND } from '@/lib/data'
+import { NAV_LINKS } from '@/lib/data'
 import { cn } from '@/lib/utils'
 
 export default function Navbar() {
@@ -36,14 +37,34 @@ export default function Navbar() {
           scrolled ? 'glass shadow-sm py-3' : 'bg-transparent py-5'
         )}
       >
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
-            <div className="w-8 h-8 rounded-full bg-forest-700 flex items-center justify-center shadow-md group-hover:bg-forest-600 transition-colors">
-              <Leaf className="w-4 h-4 text-gold-400" />
-            </div>
-            <span className="font-display text-xl font-semibold tracking-wide text-forest-800">
-              {BRAND.name}
+        <div className="relative max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between">
+          {/* Mobile menu trigger */}
+          <button
+            className="md:hidden p-2 -ml-2 rounded-full hover:bg-forest-700/10 transition-colors"
+            onClick={() => setMobileOpen(true)}
+            aria-label="Ouvrir le menu"
+          >
+            <Menu className="w-5 h-5 text-forest-700" />
+          </button>
+
+          {/* Logo — centered on mobile, left-aligned on desktop */}
+          <Link
+            href="#accueil"
+            className="flex flex-col items-center leading-none group absolute left-1/2 -translate-x-1/2 md:static md:left-auto md:translate-x-0 md:items-start"
+          >
+            <span className="font-logo text-3xl text-forest-900 inline-flex items-center uppercase">
+              Ina
+              <Image
+                src="/images/leaf3.png"
+                alt=""
+                width={20}
+                height={20}
+                className="-translate-y-1 select-none pointer-events-none"
+              />
+              s
+            </span>
+            <span className="text-[10px] text-center font-semibold tracking-[0.3em] text-gold-600 uppercase mt-1">
+              Drink
             </span>
           </Link>
 
@@ -53,10 +74,10 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-forest-700 hover:text-gold-600 transition-colors relative group"
+                className="text-xs font-bold uppercase tracking-wide text-forest-800 hover:text-gold-600 transition-colors relative group"
               >
                 {link.label}
-                <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-gold-500 group-hover:w-full transition-all duration-300" />
+                <span className="absolute -bottom-1 left-0 w-0 h-px bg-gold-500 group-hover:w-full transition-all duration-300" />
               </Link>
             ))}
           </nav>
@@ -67,10 +88,11 @@ export default function Navbar() {
               onClick={() => setOpen(true)}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="relative p-2 rounded-full hover:bg-forest-700/10 transition-colors"
-              aria-label={`Panier (${count} articles)`}
+              className="hidden md:flex relative items-center gap-2 bg-gold-600 text-white pl-4 pr-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wide hover:bg-gold-700 transition-colors shadow-md shadow-gold-600/25"
+              aria-label={`Commander — panier (${count} articles)`}
             >
-              <ShoppingCart className="w-5 h-5 text-forest-700" />
+              <ShoppingCart className="w-4 h-4" />
+              Commander
               <AnimatePresence>
                 {count > 0 && (
                   <motion.span
@@ -78,7 +100,7 @@ export default function Navbar() {
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
                     exit={{ scale: 0 }}
-                    className="absolute -top-1 -right-1 w-5 h-5 bg-gold-500 text-white text-xs font-bold rounded-full flex items-center justify-center"
+                    className="absolute -top-1.5 -right-1.5 w-5 h-5 bg-forest-800 text-white text-[10px] font-bold rounded-full flex items-center justify-center"
                   >
                     {count}
                   </motion.span>
@@ -86,23 +108,15 @@ export default function Navbar() {
               </AnimatePresence>
             </motion.button>
 
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="hidden md:flex btn-shine bg-forest-700 text-cream-100 px-5 py-2.5 rounded-full text-sm font-medium hover:bg-forest-600 transition-colors shadow-md shadow-forest-700/20"
-              onClick={() => {
-                document.getElementById('pack')?.scrollIntoView({ behavior: 'smooth' })
-              }}
-            >
-              Commander
-            </motion.button>
-
             <button
-              className="md:hidden p-2 rounded-full hover:bg-forest-700/10 transition-colors"
-              onClick={() => setMobileOpen(true)}
-              aria-label="Ouvrir le menu"
+              onClick={() => setOpen(true)}
+              className="md:hidden relative p-2 -mr-2 rounded-full hover:bg-forest-700/10 transition-colors"
+              aria-label={`Panier (${count} articles)`}
             >
-              <Menu className="w-5 h-5 text-forest-700" />
+              <ShoppingCart className="w-5 h-5 text-forest-700" />
+              <span className="absolute -top-0.5 -right-0.5 w-4 h-4 bg-gold-500 text-white text-[10px] font-bold rounded-full flex items-center justify-center">
+                {count}
+              </span>
             </button>
           </div>
         </div>
@@ -127,11 +141,21 @@ export default function Navbar() {
               className="fixed inset-y-0 left-0 w-4/5 max-w-sm bg-cream-100 z-50 shadow-2xl flex flex-col md:hidden"
             >
               <div className="flex items-center justify-between p-6 border-b border-cream-300">
-                <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 rounded-full bg-forest-700 flex items-center justify-center">
-                    <Leaf className="w-4 h-4 text-gold-400" />
-                  </div>
-                  <span className="font-display text-lg font-semibold text-forest-800">{BRAND.name}</span>
+                <div className="flex flex-col leading-none">
+                  <span className="font-logo text-2xl text-forest-900 inline-flex items-center">
+                    Ina
+                    <Image
+                      src="/images/leaf.png"
+                      alt=""
+                      width={12}
+                      height={12}
+                      className="-translate-y-2.5 rotate-12 select-none pointer-events-none"
+                    />
+                    s
+                  </span>
+                  <span className="text-[9px] font-semibold tracking-[0.3em] text-gold-600 uppercase -mt-1 ml-0.5">
+                    Drink
+                  </span>
                 </div>
                 <button
                   onClick={() => setMobileOpen(false)}

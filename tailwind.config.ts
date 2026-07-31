@@ -74,6 +74,7 @@ const config: Config = {
       fontFamily: {
         display: ['var(--font-display)', 'serif'],
         sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
+        logo: ['var(--font-logo)', 'cursive'],
       },
       animation: {
         float: 'float 6s ease-in-out infinite',

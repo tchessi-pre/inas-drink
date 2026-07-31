@@ -9,7 +9,7 @@ export default function Footer() {
   const year = new Date().getFullYear()
 
   return (
-    <footer className="bg-forest-800 text-cream-300 relative overflow-hidden" aria-label="Pied de page">
+    <footer id="contact" className="bg-forest-800 text-cream-300 relative overflow-hidden" aria-label="Pied de page">
       <div className="absolute inset-0 bg-grain opacity-[0.05] pointer-events-none" aria-hidden />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-12 py-16 lg:py-20 relative">

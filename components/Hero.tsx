@@ -3,23 +3,13 @@
 import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import Image from 'next/image'
-import { ArrowRight, Star } from 'lucide-react'
-import { PRODUCTS } from '@/lib/data'
-import { cn } from '@/lib/utils'
+import { ArrowRight, Leaf, ShieldCheck, Globe } from 'lucide-react'
 
-const floatConfig = [
-  { delay: 0, duration: 6, y: [-16, 0] },
-  { delay: 1.4, duration: 7, y: [-12, 4] },
-  { delay: 0.7, duration: 5.5, y: [-20, 0] },
-  { delay: 2, duration: 6.5, y: [-14, 2] },
+const heroBadges = [
+  { icon: Leaf, title: '100% Naturel', text: 'Ingrédients naturels sans colorant' },
+  { icon: ShieldCheck, title: 'Sans conservateur', text: 'Pour une consommation saine et sûre' },
+  { icon: Globe, title: 'Made in Africa', text: 'Inspiré par la richesse de notre continent' },
 ]
-
-const productAccents: Record<string, string> = {
-  bissap: 'from-bissap-500/15 to-bissap-500/5 border-bissap-500/20',
-  gingembre: 'from-gingembre-500/15 to-gingembre-500/5 border-gingembre-500/20',
-  tamarin: 'from-tamarin-500/15 to-tamarin-500/5 border-tamarin-500/20',
-  baobab: 'from-baobab-500/20 to-baobab-500/8 border-baobab-500/25',
-}
 
 export default function Hero() {
   const ref = useRef<HTMLElement>(null)
@@ -30,6 +20,7 @@ export default function Hero() {
   return (
     <section
       ref={ref}
+      id="accueil"
       className="relative min-h-screen flex items-center overflow-hidden bg-cream-100"
       aria-label="Bienvenue sur INA'S DRINK"
     >
@@ -63,121 +54,99 @@ export default function Hero() {
 
           {/* ── Left: Text ── */}
           <motion.div style={{ y: textY }} className="relative z-10 order-2 lg:order-1">
-            {/* Rating badge */}
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-              className="inline-flex items-center gap-2.5 glass rounded-full px-4 py-2 mb-8 shadow-sm"
-            >
-              <div className="flex gap-0.5" aria-label="5 étoiles">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} className="w-3 h-3 fill-gold-500 text-gold-500" />
-                ))}
-              </div>
-              <span className="text-xs font-semibold text-forest-700 tracking-wide">
-                4.9 / 5 — Satisfaction Client
-              </span>
-            </motion.div>
-
             {/* Headline */}
             <motion.h1
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.9, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
-              className="font-display text-5xl sm:text-6xl lg:text-7xl font-light leading-[1.04] mb-6 text-forest-800 text-balance"
+              transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+              className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.04] mb-6 text-forest-800 text-balance"
             >
-              LE GOÛT{' '}
-              <span className="gold-text-shimmer font-semibold">AUTHENTIQUE</span>
+              LE GOÛT AUTHENTIQUE
               <br />
-              DE L&rsquo;AFRIQUE
+              <span className="gold-text-shimmer">DE L&rsquo;AFRIQUE</span>
             </motion.h1>
 
             {/* Subtext */}
             <motion.p
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-              className="text-forest-600 text-lg leading-relaxed mb-10 max-w-md"
+              transition={{ duration: 0.8, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
+              className="text-forest-600 text-lg leading-relaxed mb-8 max-w-md"
             >
-              Découvrez des boissons naturelles inspirées des recettes africaines
-              traditionnelles, élaborées avec des ingrédients soigneusement sélectionnés.
+              INA&rsquo;S DRINK vous propose des boissons naturelles et rafraîchissantes,
+              élaborées à partir d&rsquo;ingrédients soigneusement sélectionnés en Afrique.
+              Savourez le meilleur de la nature, à chaque gorgée.
             </motion.p>
 
-            {/* CTAs */}
+            {/* Badges */}
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.22, ease: [0.22, 1, 0.36, 1] }}
+              className="flex flex-wrap gap-6 sm:gap-8 mb-10"
+            >
+              {heroBadges.map(badge => (
+                <div key={badge.title} className="flex items-start gap-3 max-w-[170px]">
+                  <div className="shrink-0 w-11 h-11 rounded-full border border-forest-700/25 flex items-center justify-center">
+                    <badge.icon className="w-[18px] h-[18px] text-forest-700" />
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold tracking-wide text-forest-800 uppercase">
+                      {badge.title}
+                    </p>
+                    <p className="text-xs text-forest-600 leading-snug mt-0.5">{badge.text}</p>
+                  </div>
+                </div>
+              ))}
+            </motion.div>
+
+            {/* CTA */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.32, ease: [0.22, 1, 0.36, 1] }}
-              className="flex flex-wrap gap-4"
             >
               <motion.a
                 href="#produits"
                 whileHover={{ scale: 1.02, y: -2 }}
                 whileTap={{ scale: 0.97 }}
-                className="btn-shine inline-flex items-center gap-2 bg-forest-700 text-cream-100 px-8 py-4 rounded-full font-medium text-sm tracking-wide hover:bg-forest-600 transition-colors shadow-lg shadow-forest-700/25"
+                className="btn-shine inline-flex items-center gap-2 border-2 border-forest-800 text-forest-800 px-8 py-4 rounded-full font-semibold text-sm tracking-wide uppercase hover:bg-forest-800 hover:text-cream-100 transition-colors"
               >
                 Découvrir nos produits
-              </motion.a>
-              <motion.a
-                href="#pack"
-                whileHover={{ scale: 1.02, y: -2 }}
-                whileTap={{ scale: 0.97 }}
-                className="inline-flex items-center gap-2 border border-gold-500/50 text-forest-700 px-8 py-4 rounded-full font-medium text-sm tracking-wide hover:border-gold-500 hover:bg-gold-500/6 transition-all"
-              >
-                Commander maintenant
                 <ArrowRight className="w-4 h-4" />
               </motion.a>
             </motion.div>
           </motion.div>
 
-          {/* ── Right: Floating bottles ── */}
-          <div className="order-1 lg:order-2 h-[440px] sm:h-[520px] lg:h-[640px]">
-            <div className="grid grid-cols-2 gap-4 h-full">
-              {PRODUCTS.map((product, i) => (
-                <motion.div
-                  key={product.id}
-                  initial={{ opacity: 0, y: 60, scale: 0.88 }}
-                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                  transition={{ duration: 1, delay: 0.35 + i * 0.14, ease: [0.22, 1, 0.36, 1] }}
-                  className="relative"
-                >
-                  <motion.div
-                    animate={{ y: floatConfig[i].y }}
-                    transition={{
-                      duration: floatConfig[i].duration,
-                      delay: floatConfig[i].delay,
-                      repeat: Infinity,
-                      repeatType: 'reverse',
-                      ease: 'easeInOut',
-                    }}
-                    className={cn(
-                      'relative h-full rounded-3xl overflow-hidden shadow-xl border',
-                      'bg-gradient-to-b',
-                      productAccents[product.colorKey]
-                    )}
-                  >
-                    <Image
-                      src={product.bottleImage}
-                      alt={product.name}
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 640px) 45vw, (max-width: 1024px) 40vw, 22vw"
-                      priority={i < 2}
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
-                    <div className="absolute bottom-3 left-3 right-3">
-                      <div className="glass rounded-xl px-3 py-1.5">
-                        <p className="font-display text-[13px] font-semibold text-forest-800 truncate">
-                          {product.name}
-                        </p>
-                        <p className="text-[11px] text-forest-600 truncate">{product.subtitle}</p>
-                      </div>
-                    </div>
-                  </motion.div>
-                </motion.div>
-              ))}
-            </div>
+          {/* ── Right: Bottles ── */}
+          <div className="order-1 lg:order-2 relative h-[320px] sm:h-[420px] lg:h-[600px] flex items-center justify-center">
+            {/* Ground shadow */}
+            <div
+              className="absolute bottom-6 left-1/2 -translate-x-1/2 w-[75%] h-10 bg-forest-900/10 blur-2xl rounded-full"
+              aria-hidden
+            />
+
+            <motion.div
+              initial={{ opacity: 0, y: 60, scale: 0.94 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+              className="relative w-full h-full"
+              style={{
+                maskImage:
+                  'radial-gradient(ellipse 68% 68% at 50% 48%, black 55%, transparent 100%)',
+                WebkitMaskImage:
+                  'radial-gradient(ellipse 68% 68% at 50% 48%, black 55%, transparent 100%)',
+              }}
+            >
+              <Image
+                src="/images/bouteilles-inas3.png"
+                alt="Les quatre boissons INA'S DRINK : Bissap, Tamarin, Gingembre, Baobab"
+                fill
+                className="object-contain"
+                sizes="(max-width: 1024px) 90vw, 48vw"
+                priority
+              />
+            </motion.div>
           </div>
 
         </div>

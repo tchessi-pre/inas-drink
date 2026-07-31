@@ -25,7 +25,7 @@ const cardVariants = {
 
 export default function Features() {
   return (
-    <section className="py-24 lg:py-32 bg-cream-100 relative overflow-hidden">
+    <section id="engagements" className="py-24 lg:py-32 bg-cream-100 relative overflow-hidden">
       <div className="absolute inset-0 bg-grain opacity-[0.03] pointer-events-none" aria-hidden />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-12">

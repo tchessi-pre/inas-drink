@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { PRODUCTS } from '@/lib/data'
+import { PRODUCTS, PRODUCTS_1L } from '@/lib/data'
 import ProductCard from './ProductCard'
 
 const containerVariants = {
@@ -39,7 +39,7 @@ export default function ProductGrid() {
           </p>
         </motion.div>
 
-        {/* Grid */}
+        {/* Grid — 50 cl */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -48,6 +48,37 @@ export default function ProductGrid() {
           className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"
         >
           {PRODUCTS.map(product => (
+            <motion.div key={product.id} variants={itemVariants}>
+              <ProductCard product={product} />
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* Header — 1 L */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          className="text-center mt-20 mb-16"
+        >
+          <p className="text-gold-600 text-sm font-semibold tracking-[0.2em] uppercase mb-4">
+            Format familial
+          </p>
+          <h2 className="font-display text-4xl lg:text-5xl font-light text-forest-800">
+            Nos boissons en <span className="gold-text font-semibold">1 L</span>
+          </h2>
+        </motion.div>
+
+        {/* Grid — 1 L */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-60px' }}
+          className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"
+        >
+          {PRODUCTS_1L.map(product => (
             <motion.div key={product.id} variants={itemVariants}>
               <ProductCard product={product} />
             </motion.div>

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Cormorant_Garamond, Inter } from 'next/font/google'
+import { Cormorant_Garamond, Inter, Kaushan_Script } from 'next/font/google'
 import './globals.css'
 import { CartProvider } from '@/lib/cart'
 
@@ -13,6 +13,13 @@ const cormorant = Cormorant_Garamond({
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-sans',
+  display: 'swap',
+})
+
+const kaushan = Kaushan_Script({
+  subsets: ['latin'],
+  weight: '400',
+  variable: '--font-logo',
   display: 'swap',
 })
 
@@ -60,7 +67,7 @@ const jsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="fr" className={`${cormorant.variable} ${inter.variable}`}>
+    <html lang="fr" className={`${cormorant.variable} ${inter.variable} ${kaushan.variable}`}>
       <head>
         <script
           type="application/ld+json"
