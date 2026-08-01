@@ -40,7 +40,7 @@ export default function Features() {
           <p className="text-gold-600 text-sm font-semibold tracking-[0.2em] uppercase mb-4">
             Nos engagements
           </p>
-          <h2 className="font-display text-4xl lg:text-5xl font-light text-forest-800">
+          <h2 className="text-4xl lg:text-5xl font-light text-forest-800">
             Pourquoi choisir{' '}
             <span className="gold-text font-semibold">INA&rsquo;S DRINK</span>?
           </h2>
@@ -72,7 +72,7 @@ export default function Features() {
                     <Icon className="w-6 h-6 text-forest-700" />
                   </div>
 
-                  <h3 className="font-display text-xl font-semibold text-forest-800 mb-3">
+                  <h3 className="text-lg font-semibold text-forest-800 mb-3">
                     {feature.title}
                   </h3>
                   <p className="text-forest-600 text-sm leading-relaxed">{feature.text}</p>

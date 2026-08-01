@@ -39,7 +39,7 @@ export default function CTA() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.9, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
-          className="font-display text-4xl sm:text-5xl lg:text-6xl font-light text-cream-100 mb-6 leading-tight text-balance"
+          className="text-4xl sm:text-5xl lg:text-5xl font-light text-cream-100 mb-6 leading-tight text-balance"
         >
           Prêt à découvrir les saveurs{' '}
           <span className="gold-text font-semibold">authentiques de l&rsquo;Afrique ?</span>

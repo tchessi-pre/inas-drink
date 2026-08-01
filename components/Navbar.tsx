@@ -49,7 +49,7 @@ export default function Navbar() {
 
           {/* Logo — centered on mobile, left-aligned on desktop */}
           <Link
-            href="#accueil"
+            href="/#accueil"
             className="flex flex-col items-center leading-none group absolute left-1/2 -translate-x-1/2 md:static md:left-auto md:translate-x-0 md:items-start"
           >
             <Logo size="lg" />

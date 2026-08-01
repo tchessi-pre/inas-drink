@@ -167,9 +167,14 @@ export const FAQS = [
 ]
 
 export const NAV_LINKS = [
-  { label: 'Accueil', href: '#accueil' },
-  { label: 'Nos Produits', href: '#produits' },
-  { label: 'À Propos', href: '#histoire' },
-  { label: 'Nos Engagements', href: '#engagements' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Accueil', href: '/#accueil' },
+  { label: 'Nos Produits', href: '/#produits' },
+  { label: 'À Propos', href: '/#histoire' },
+  { label: 'Nos Engagements', href: '/#engagements' },
+  { label: 'Contact', href: '/#contact' },
+]
+
+export const LEGAL_LINKS = [
+  { label: 'Mentions légales', href: '/mentions-legales' },
+  { label: 'Politique de confidentialité', href: '/politique-confidentialite' },
 ]

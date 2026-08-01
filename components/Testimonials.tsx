@@ -51,7 +51,7 @@ export default function Testimonials() {
           <p className="text-gold-600 text-sm font-semibold tracking-[0.2em] uppercase mb-4">
             Ils nous font confiance
           </p>
-          <h2 className="font-display text-4xl lg:text-5xl font-light text-forest-800">
+          <h2 className="text-4xl lg:text-5xl font-light text-forest-800">
             Ce qu&rsquo;ils <span className="gold-text font-semibold">disent de nous</span>
           </h2>
         </motion.div>
@@ -88,7 +88,7 @@ export default function Testimonials() {
                 </div>
 
                 {/* Quote */}
-                <blockquote className="font-display text-xl sm:text-2xl lg:text-3xl font-light text-forest-800 leading-relaxed mb-8 max-w-2xl">
+                <blockquote className="text-xl sm:text-xl lg:text-2xl font-light text-forest-800 leading-relaxed mb-8 max-w-2xl">
                   &ldquo;{t.text}&rdquo;
                 </blockquote>
 

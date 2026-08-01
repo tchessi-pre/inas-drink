@@ -24,12 +24,12 @@ const kaushan = Kaushan_Script({
 })
 
 export const metadata: Metadata = {
-  title: "INA'S DRINK – Le goût authentique de l'Afrique",
+  title: "INA'S DRINK - Le goût authentique de l'Afrique",
   description:
     'Boissons naturelles premium inspirées des recettes africaines traditionnelles. Bissap, Gingembre, Tamarin, Baobab. Sans conservateurs, 100 % naturel.',
   keywords: ['boissons africaines', 'jus naturels', 'bissap', 'gingembre', 'tamarin', 'baobab', 'premium'],
   openGraph: {
-    title: "INA'S DRINK – Le goût authentique de l'Afrique",
+    title: "INA'S DRINK - Le goût authentique de l'Afrique",
     description: 'Boissons naturelles premium inspirées des recettes africaines traditionnelles.',
     type: 'website',
     locale: 'fr_FR',

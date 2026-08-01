@@ -97,10 +97,11 @@ export default function ProductCard({ product }: ProductCardProps) {
           {/* Prix poussé en bas de la colonne */}
           <div className="mt-auto pt-3 flex justify-end">
             <div className="flex flex-col items-center justify-center w-16 h-16 rounded-full bg-cream-300 shrink-0 shadow-sm">
-              <span className="font-display text-lg font-bold text-forest-900 leading-none">
+              <span className="text-sm font-bold text-forest-900 leading-none">
                 {product.price.toFixed(2)}€
               </span>
-              <span className="text-[14px] text-forest-500 mt-0.5 font-bold">{product.volume}</span>
+              <div className="w-6 h-px mt-1 bg-gold-400 my-0.5"></div>
+              <span className="text-[10px] text-forest-500 font-bold">{product.volume}</span>
             </div>
           </div>
         </div>
@@ -112,7 +113,7 @@ export default function ProductCard({ product }: ProductCardProps) {
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.96 }}
         className={cn(
-          'btn-shine mt-4 w-full flex items-center justify-center gap-2 text-white text-xs font-bold uppercase tracking-wide py-3 rounded-xl shadow-lg transition-colors',
+          'btn-shine mt-4 w-full flex items-center justify-center gap-2 text-white text-xs font-bold uppercase tracking-wide py-3 rounded-full shadow-lg transition-colors',
           accent.btn
         )}
         aria-label={`Ajouter ${product.name} au panier`}
