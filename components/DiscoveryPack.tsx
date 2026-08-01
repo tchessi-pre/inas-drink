@@ -84,7 +84,7 @@ export default function DiscoveryPack() {
             </div>
 
             {/* ── Perks ── */}
-            <div className="flex sm:flex-row lg:flex-col gap-6 lg:gap-6 pt-6 lg:pt-0 lg:pl-8 border-t lg:border-t-0 lg:border-l border-cream-300">
+            <div className="flex flex-col sm:flex-row lg:flex-col gap-6 lg:gap-6 pt-6 lg:pt-0 lg:pl-8 border-t lg:border-t-0 lg:border-l border-cream-300">
               {perks.map(perk => (
                 <div key={perk.title} className="flex items-center gap-3">
                   <div className="shrink-0 w-11 h-11 rounded-full border border-forest-700/25 flex items-center justify-center">
