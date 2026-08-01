@@ -40,7 +40,7 @@ export default function StorySection() {
               transition={{ delay: 0.4, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
               className="absolute -bottom-6 -right-6 glass rounded-2xl p-5 shadow-xl border border-gold-500/20 max-w-[160px]"
             >
-              <p className="font-display text-4xl font-semibold text-forest-800 mb-1">100%</p>
+              <p className="text-4xl font-semibold text-forest-800 mb-1">100%</p>
               <p className="text-xs font-medium text-forest-600 leading-snug">
                 Ingrédients naturels<br />sans additifs
               </p>
@@ -58,12 +58,12 @@ export default function StorySection() {
               <div className="w-10 h-10 rounded-xl bg-forest-700/10 flex items-center justify-center">
                 <Leaf className="w-5 h-5 text-forest-700" />
               </div>
-              <p className="text-gold-600 text-sm font-semibold tracking-[0.2em] uppercase">
+              <p className="text-gold-600 text-sm font-semibold tracking-[0.1em] uppercase">
                 Notre histoire
               </p>
             </div>
 
-            <h2 className="font-display text-4xl lg:text-5xl font-light text-forest-800 mb-6 leading-tight">
+            <h2 className="text-4xl lg:text-5xl font-light text-forest-800 mb-6 leading-tight">
               Chaque bouteille{' '}
               <span className="gold-text font-semibold">raconte une histoire</span>
             </h2>

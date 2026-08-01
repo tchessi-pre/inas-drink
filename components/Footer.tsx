@@ -20,7 +20,7 @@ export default function Footer() {
 
             {/* Call to action */}
             <div className="lg:pr-8 pb-8 lg:pb-0">
-              <h3 className="font-display text-2xl font-semibold text-cream-100 leading-tight">
+              <h3 className="text-2xl font-semibold text-cream-100 leading-tight">
                 Envie de nature ?
               </h3>
               <p className="text-gold-400 font-semibold text-sm tracking-wide uppercase mt-1 mb-3">
@@ -110,12 +110,13 @@ export default function Footer() {
 
         <div className="h-3 bg-chevron" aria-hidden />
 
-        <div className="border-t border-gold-500/20 py-3 relative">
+        <div className="border-t border-b border-gold-500/20 py-3 relative bg-gold-200/20">
           <p className="text-center text-xs tracking-wide text-gold-400 font-medium flex items-center justify-center gap-1.5">
             {BRAND.name} &ndash; {BRAND.slogan}
             <Heart className="w-3 h-3 fill-current" />
           </p>
         </div>
+        <div className="h-3 bg-chevron" aria-hidden />
       </div>
 
       <div className="absolute inset-0 bg-grain opacity-[0.05] pointer-events-none" aria-hidden />
@@ -129,7 +130,7 @@ export default function Footer() {
               <div className="w-9 h-9 rounded-full bg-gold-500/15 border border-gold-500/25 flex items-center justify-center">
                 <Leaf className="w-4 h-4 text-gold-400" />
               </div>
-              <span className="font-display text-xl font-semibold text-cream-100">
+              <span className="text-xl font-semibold text-cream-100">
                 {BRAND.name}
               </span>
             </div>
@@ -240,7 +241,7 @@ export default function Footer() {
             ))}
           </div>
           <p className="text-xs text-cream-600">
-            Boissons naturelles — sans conservateurs — fabriquées avec passion
+            Boissons naturelles - sans conservateurs - fabriquées avec passion
           </p>
         </div>
       </div>

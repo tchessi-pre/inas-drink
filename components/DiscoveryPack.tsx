@@ -37,15 +37,15 @@ export default function DiscoveryPack() {
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="bg-white rounded-3xl border border-cream-300/70 shadow-sm p-6 lg:p-8"
         >
-          <div className="grid lg:grid-cols-[220px_1fr_auto] gap-8 items-center">
+          <div className="grid lg:grid-cols-[280px_1fr_auto] gap-8 items-center">
 
             {/* ── Image ── */}
-            <div className="relative aspect-[4/3] lg:aspect-square rounded-2xl overflow-hidden bg-cream-100">
+            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-cream-100">
               <Image
                 src="/images/package.png"
                 alt="Pack Découverte : Bissap, Tamarin, Gingembre, Baobab"
                 fill
-                className="object-contain"
+                className="object-cover"
                 sizes="(max-width: 1024px) 80vw, 220px"
               />
             </div>

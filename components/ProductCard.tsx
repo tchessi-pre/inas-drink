@@ -80,7 +80,7 @@ export default function ProductCard({ product }: ProductCardProps) {
 
         {/* Colonne texte : le prix reste en bas grâce à mt-auto */}
         <div className="flex-1 flex flex-col min-w-0">
-          <h3 className="font-display text-lg font-bold text-forest-900 leading-tight uppercase">
+          <h3 className="text-sm font-bold text-forest-900 leading-tight uppercase">
             {product.name}
           </h3>
           <p className="text-xs text-forest-600 leading-snug mt-1">{product.description}</p>

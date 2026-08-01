@@ -31,7 +31,7 @@ export default function ProductGrid() {
           <p className="text-gold-600 text-sm font-semibold tracking-[0.2em] uppercase mb-4">
             La gamme complète
           </p>
-          <h2 className="font-display text-4xl lg:text-5xl font-light text-forest-800 mb-4">
+          <h2 className="text-4xl lg:text-5xl font-light text-forest-800 mb-4">
             Nos <span className="gold-text font-semibold">Boissons</span>
           </h2>
           <p className="text-forest-600 text-base max-w-md mx-auto">
@@ -65,7 +65,7 @@ export default function ProductGrid() {
           <p className="text-gold-600 text-sm font-semibold tracking-[0.2em] uppercase mb-4">
             Format familial
           </p>
-          <h2 className="font-display text-4xl lg:text-5xl font-light text-forest-800">
+          <h2 className="text-4xl lg:text-5xl font-light text-forest-800">
             Nos boissons en <span className="gold-text font-semibold">1 L</span>
           </h2>
         </motion.div>
