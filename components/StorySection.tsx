@@ -23,7 +23,7 @@ export default function StorySection() {
 
             <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
               <Image
-                src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=900"
+                src="/images/history2.png"
                 alt="Préparation naturelle des boissons INA'S DRINK"
                 fill
                 className="object-cover"

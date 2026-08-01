@@ -2,9 +2,22 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import { ShoppingCart, Award, Truck } from 'lucide-react'
-import { PRODUCTS, PACK_PRICE, PACK_ORIGINAL_PRICE } from '@/lib/data'
+import { ShoppingCart, Package, Leaf } from 'lucide-react'
+import { PACK_PRICE, PACK_ORIGINAL_PRICE } from '@/lib/data'
 import { useCart } from '@/lib/cart'
+
+const perks = [
+  {
+    icon: Package,
+    title: 'Livraison rapide',
+    text: 'Partout en France et en Europe',
+  },
+  {
+    icon: Leaf,
+    title: 'Emballage écologique',
+    text: 'Nous prenons soin de la planète',
+  },
+]
 
 export default function DiscoveryPack() {
   const { add, setOpen } = useCart()
@@ -15,136 +28,80 @@ export default function DiscoveryPack() {
   }
 
   return (
-    <section
-      id="pack"
-      className="py-24 lg:py-36 relative overflow-hidden bg-forest-700"
-      aria-label="Pack Découverte"
-    >
-      {/* Grain overlay */}
-      <div className="absolute inset-0 bg-grain opacity-[0.06] pointer-events-none" aria-hidden />
+    <section id="pack" className="py-16 lg:py-20 bg-cream-100 relative" aria-label="Pack Découverte">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          className="bg-white rounded-3xl border border-cream-300/70 shadow-sm p-6 lg:p-8"
+        >
+          <div className="grid lg:grid-cols-[220px_1fr_auto] gap-8 items-center">
 
-      {/* Radial glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-gold-500/5 blur-3xl pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 relative">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-
-          {/* ── Left: Bottle grid ── */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: '-80px' }}
-            transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-            className="relative"
-          >
-            {/* "Meilleure vente" badge */}
-            <div className="absolute -top-4 -right-4 z-10">
-              <motion.div
-                animate={{ rotate: [0, 3, -3, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-                className="flex items-center gap-1.5 bg-gold-500 text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg shadow-gold-500/30"
-              >
-                <Award className="w-3.5 h-3.5" />
-                Meilleure vente
-              </motion.div>
+            {/* ── Image ── */}
+            <div className="relative aspect-[4/3] lg:aspect-square rounded-2xl overflow-hidden bg-cream-100">
+              <Image
+                src="/images/package.png"
+                alt="Pack Découverte : Bissap, Tamarin, Gingembre, Baobab"
+                fill
+                className="object-contain"
+                sizes="(max-width: 1024px) 80vw, 220px"
+              />
             </div>
 
-            <div className="grid grid-cols-2 gap-4 p-6 bg-white/5 rounded-3xl border border-white/10 backdrop-blur-sm">
-              {PRODUCTS.map((product, i) => (
-                <motion.div
-                  key={product.id}
-                  initial={{ opacity: 0, scale: 0.85 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 + 0.3, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-                  className="relative aspect-[3/4] rounded-2xl overflow-hidden"
-                >
-                  <Image
-                    src={product.bottleImage}
-                    alt={product.name}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 40vw, 20vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-                  <p className="absolute bottom-2 left-2 right-2 text-center text-white text-xs font-medium leading-tight">
-                    {product.name}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
+            {/* ── Info ── */}
+            <div>
+              <h3 className="font-display text-2xl lg:text-3xl font-bold text-forest-900">
+                Pack Découverte
+              </h3>
+              <p className="text-gold-600 font-bold text-xs tracking-[0.15em] uppercase mt-1.5">
+                4 saveurs, 4 bienfaits
+              </p>
+              <p className="text-forest-600 text-sm leading-relaxed mt-3 max-w-md">
+                Découvrez nos 4 boissons naturelles et profitez d&rsquo;un prix spécial.
+              </p>
 
-          {/* ── Right: Info ── */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: '-80px' }}
-            transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-            className="text-cream-100"
-          >
-            <p className="text-gold-400 text-sm font-semibold tracking-[0.2em] uppercase mb-4">
-              Offre exclusive
-            </p>
-            <h2 className="font-display text-4xl lg:text-5xl font-light mb-4 leading-tight">
-              Pack{' '}
-              <span className="gold-text font-semibold">Découverte</span>
-            </h2>
-            <p className="text-cream-300 text-base leading-relaxed mb-8 max-w-md">
-              Partez à la découverte des quatre saveurs authentiques d&rsquo;INA&rsquo;S DRINK
-              dans un coffret soigneusement composé — le cadeau idéal ou votre initiation parfaite.
-            </p>
-
-            {/* Inclusions */}
-            <ul className="space-y-2.5 mb-8">
-              {PRODUCTS.map(p => (
-                <li key={p.id} className="flex items-center gap-3 text-sm text-cream-200">
-                  <span className="w-1.5 h-1.5 rounded-full bg-gold-400 flex-shrink-0" />
-                  1× {p.name} ({p.volume})
-                </li>
-              ))}
-            </ul>
-
-            {/* Perks */}
-            <div className="flex flex-wrap gap-3 mb-8">
-              <span className="flex items-center gap-1.5 text-xs font-medium text-cream-300 bg-white/10 px-3 py-1.5 rounded-full">
-                <Truck className="w-3.5 h-3.5 text-gold-400" /> Livraison offerte dès 40€
-              </span>
-              <span className="flex items-center gap-1.5 text-xs font-medium text-cream-300 bg-white/10 px-3 py-1.5 rounded-full">
-                <Award className="w-3.5 h-3.5 text-gold-400" /> 100 % naturel
-              </span>
-            </div>
-
-            {/* Pricing + CTA */}
-            <div className="flex items-end gap-4 mb-6">
-              <div>
-                <span className="block text-cream-400/60 text-sm line-through mb-0.5">
-                  {PACK_ORIGINAL_PRICE.toFixed(2)} €
+              <div className="flex items-center flex-wrap gap-3 mt-5">
+                <span className="text-forest-400 line-through text-sm">
+                  {PACK_ORIGINAL_PRICE.toFixed(2)}€
                 </span>
-                <div className="flex items-baseline gap-1">
-                  <span className="font-display text-5xl font-semibold text-cream-100">
-                    {PACK_PRICE.toFixed(2)}
-                  </span>
-                  <span className="text-cream-300 text-lg">€</span>
-                </div>
+                <span className="flex items-center justify-center px-4 h-11 rounded-full bg-gold-500 text-white font-display font-bold text-lg">
+                  {PACK_PRICE.toFixed(2)}€
+                </span>
+                <span className="text-forest-500 text-sm">Le pack de 4 x 50cl</span>
               </div>
-              <span className="mb-1 text-xs font-bold text-gold-400 bg-gold-500/15 px-3 py-1.5 rounded-full border border-gold-500/25">
-                Économisez {(PACK_ORIGINAL_PRICE - PACK_PRICE).toFixed(2)} €
-              </span>
+
+              <motion.button
+                onClick={handleAdd}
+                whileHover={{ scale: 1.02, y: -2 }}
+                whileTap={{ scale: 0.97 }}
+                className="btn-shine mt-5 inline-flex items-center gap-2 bg-forest-700 hover:bg-forest-800 text-white px-6 py-3 rounded-full font-bold text-sm uppercase tracking-wide shadow-lg shadow-forest-700/25 transition-colors"
+              >
+                <ShoppingCart className="w-4 h-4" />
+                Ajouter au panier
+              </motion.button>
             </div>
 
-            <motion.button
-              onClick={handleAdd}
-              whileHover={{ scale: 1.02, y: -2 }}
-              whileTap={{ scale: 0.97 }}
-              className="btn-shine flex items-center gap-3 bg-gold-500 hover:bg-gold-400 text-white px-10 py-4 rounded-full font-semibold text-base shadow-xl shadow-gold-500/30 transition-colors"
-            >
-              <ShoppingCart className="w-5 h-5" />
-              Commander le pack
-            </motion.button>
-          </motion.div>
+            {/* ── Perks ── */}
+            <div className="flex sm:flex-row lg:flex-col gap-6 lg:gap-6 pt-6 lg:pt-0 lg:pl-8 border-t lg:border-t-0 lg:border-l border-cream-300">
+              {perks.map(perk => (
+                <div key={perk.title} className="flex items-center gap-3">
+                  <div className="shrink-0 w-11 h-11 rounded-full border border-forest-700/25 flex items-center justify-center">
+                    <perk.icon className="w-[18px] h-[18px] text-forest-700" />
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold tracking-wide text-forest-800 uppercase">
+                      {perk.title}
+                    </p>
+                    <p className="text-xs text-forest-500 leading-snug mt-0.5">{perk.text}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
 
-        </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   )

@@ -26,8 +26,7 @@ export const PRODUCTS: Product[] = [
     price: 2.5,
     colorKey: 'bissap',
     accent: 'bissap',
-    bottleImage:
-      'https://images.pexels.com/photos/13079340/pexels-photo-13079340.jpeg?auto=compress&cs=tinysrgb&w=900',
+    bottleImage: '/images/bottle-bissap.png',
     ingredientImage:
       'https://images.pexels.com/photos/6463340/pexels-photo-6463340.jpeg?auto=compress&cs=tinysrgb&w=900',
   },
@@ -41,8 +40,7 @@ export const PRODUCTS: Product[] = [
     price: 2.5,
     colorKey: 'gingembre',
     accent: 'gingembre',
-    bottleImage:
-      'https://images.pexels.com/photos/5946616/pexels-photo-5946616.jpeg?auto=compress&cs=tinysrgb&w=900',
+    bottleImage: '/images/bottle-gingembre.png',
     ingredientImage:
       'https://images.pexels.com/photos/161556/dark-green-ginger-healthy-161556.jpeg?auto=compress&cs=tinysrgb&w=900',
   },
@@ -56,8 +54,7 @@ export const PRODUCTS: Product[] = [
     price: 2.5,
     colorKey: 'tamarin',
     accent: 'tamarin',
-    bottleImage:
-      'https://images.pexels.com/photos/13466734/pexels-photo-13466734.jpeg?auto=compress&cs=tinysrgb&w=900',
+    bottleImage: '/images/bottle-tamarin.png',
     ingredientImage:
       'https://images.pexels.com/photos/6604142/pexels-photo-6604142.jpeg?auto=compress&cs=tinysrgb&w=900',
   },
@@ -71,8 +68,7 @@ export const PRODUCTS: Product[] = [
     price: 2.5,
     colorKey: 'baobab',
     accent: 'baobab',
-    bottleImage:
-      'https://images.pexels.com/photos/4791297/pexels-photo-4791297.jpeg?auto=compress&cs=tinysrgb&w=900',
+    bottleImage: '/images/bottle-baobab.png',
     ingredientImage:
       'https://images.pexels.com/photos/2294471/pexels-photo-2294471.jpeg?auto=compress&cs=tinysrgb&w=900',
   },
@@ -91,11 +87,11 @@ export const PACK_ORIGINAL_PRICE = 10.0
 export const BRAND = {
   name: "INA'S DRINK",
   slogan: "Le goût authentique de l'Afrique",
-  phone: '+33 6 12 34 56 78',
-  phoneDigits: '33612345678',
+  phone: '+33 6 87 31 45 70',
+  phoneDigits: '33687314570',
   email: 'contact@inasdrink.com',
   address: '12 Rue des Tropiques, 75011 Paris, France',
-  whatsapp: '33612345678',
+  whatsapp: '33687314570',
   instagram: 'https://instagram.com/inasdrink',
   facebook: 'https://facebook.com/inasdrink',
   tiktok: 'https://tiktok.com/@inasdrink',

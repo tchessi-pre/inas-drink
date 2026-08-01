@@ -35,13 +35,13 @@ export default function Logo({ size = 'lg', className }: LogoProps) {
       </span>
       <span
         className={cn(
-          'flex items-center justify-center gap-2 font-semibold tracking-[0.3em] text-gold-600 uppercase',
+          'flex items-center justify-center gap-2 font-semibold tracking-[0.1em] text-gold-600 uppercase',
           isLg ? 'text-[10px] mt-1' : 'text-[9px] -mt-1 ml-0.5'
         )}
       >
-        <span className="h-px w-2.5 bg-gold-600/60" aria-hidden />
+        <span className="h-px w-4 bg-gradient-to-r from-transparent to-gold-600/60" />
         Drink
-        <span className="h-px w-2.5 bg-gold-600/60" aria-hidden />
+        <span className="h-px w-4 bg-gradient-to-l from-transparent to-gold-600/60" />
       </span>
     </div>
   )
