@@ -17,9 +17,9 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <Features />
         <ProductGrid />
         <DiscoveryPack />
+        <Features />
         <StorySection />
         <Testimonials />
         <FAQ />

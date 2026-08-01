@@ -123,7 +123,7 @@ export default function Hero() {
 								initial={{ opacity: 0, y: 40 }}
 								animate={{ opacity: 1, y: 0 }}
 								transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-								className='text-5xl sm:text-6xl lg:text-5xl font-bold leading-[1.04] mb-6 text-forest-800 text-balance'
+								className='text-2xl sm:text-6xl lg:text-5xl font-bold leading-[1.04] mb-6 text-forest-800 text-balance'
 							>
 								LE GOÛT AUTHENTIQUE
 								<br />
@@ -139,7 +139,7 @@ export default function Hero() {
 									delay: 0.12,
 									ease: [0.22, 1, 0.36, 1],
 								}}
-								className='text-forest-600 text-lg leading-relaxed mb-8 max-w-md'
+								className='text-forest-600 text-lg text-justify leading-relaxed mb-8 max-w-md'
 							>
 								INA&rsquo;S DRINK vous propose des boissons naturelles et
 								rafraîchissantes, élaborées à partir d&rsquo;ingrédients
@@ -201,7 +201,7 @@ export default function Hero() {
 						</motion.div>
 
 						{/* ── Right: Bottles ── */}
-						<div className='order-1 lg:order-2 relative h-[320px] sm:h-[420px] lg:h-[600px] flex items-center justify-center'>
+						<div className='order-1 lg:order-2 relative w-full aspect-[632/524] lg:h-[600px] lg:aspect-auto flex items-center justify-center'>
 							{/* Ground shadow */}
 							<div
 								className='absolute bottom-6 left-1/2 -translate-x-1/2 w-[75%] h-10 bg-forest-900/10 blur-2xl rounded-full'
