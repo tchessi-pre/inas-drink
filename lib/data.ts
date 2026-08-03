@@ -23,7 +23,7 @@ export const PRODUCTS: Product[] = [
     description: "Boisson naturelle à base de fleurs d'hibiscus, fraîche et légèrement acidulée.",
     benefits: ['Riche en antioxydants', 'Rafraîchissant', 'Favorise la digestion'],
     volume: '50 cl',
-    price: 2.5,
+    price: 3,
     colorKey: 'bissap',
     accent: 'bissap',
     bottleImage: '/images/bottle-bissap.png',
@@ -37,7 +37,7 @@ export const PRODUCTS: Product[] = [
     description: 'Boisson tonique au gingembre frais, vivifiante et naturellement piquante.',
     benefits: ["Renforce l'immunité", 'Anti-inflammatoire', 'Énergisant'],
     volume: '50 cl',
-    price: 2.5,
+    price: 4,
     colorKey: 'gingembre',
     accent: 'gingembre',
     bottleImage: '/images/bottle-gingembre.png',
@@ -51,7 +51,7 @@ export const PRODUCTS: Product[] = [
     description: 'Boisson au goût légèrement acidulé, naturellement riche et désaltérante.',
     benefits: ['Source de vitamines', 'Facilite la digestion', 'Énergie naturelle'],
     volume: '50 cl',
-    price: 2.5,
+    price: 4,
     colorKey: 'tamarin',
     accent: 'tamarin',
     bottleImage: '/images/bottle-tamarin.png',
@@ -65,7 +65,7 @@ export const PRODUCTS: Product[] = [
     description: 'Boisson riche en vitamine C obtenue à partir de la pulpe de baobab.',
     benefits: ['Source de fibres', 'Vitamine C', 'Revitalisant naturel'],
     volume: '50 cl',
-    price: 2.5,
+    price: 4,
     colorKey: 'baobab',
     accent: 'baobab',
     bottleImage: '/images/bottle-baobab.png',
@@ -78,7 +78,7 @@ export const PRODUCTS_1L: Product[] = PRODUCTS.map(product => ({
   ...product,
   id: `${product.colorKey}-1l`,
   volume: '1 L',
-  price: 4.5,
+  price: product.colorKey === 'bissap' ? 6 : 8,
 }))
 
 export const PACK_PRICE = 9.0
@@ -87,6 +87,7 @@ export const PACK_ORIGINAL_PRICE = 10.0
 export const BRAND = {
   name: "INA'S DRINK",
   slogan: "Le goût authentique de l'Afrique",
+  website: 'https://inas-drink.com',
   phone: '+33 6 50 34 58 04',
   phoneDigits: '33650345804',
   email: 'contact@inasdrink.com',
@@ -157,8 +158,8 @@ export const FAQS = [
     a: 'Oui, 100 %. Nos boissons sont entièrement naturelles, sans conservateur ni colorant artificiel. La conservation se fait grâce à des méthodes naturelles éprouvées.',
   },
   {
-    q: 'Livrez-vous partout en France ?',
-    a: "Oui, nous livrons partout en France métropolitaine. La livraison est offerte dès 40 € d'achat. Délai moyen : 2 à 4 jours ouvrés.",
+    q: 'Où livrez-vous ?',
+    a: "Pour le moment, nous livrons uniquement à Marseille et ses environs. Délai moyen : 24 à 48 heures.",
   },
   {
     q: 'Quelle est la durée de conservation ?',

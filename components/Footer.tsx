@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
+import { QRCodeSVG } from 'qrcode.react'
 import { Leaf, Phone, Mail, Heart, MapPin, Instagram, Facebook } from 'lucide-react'
 import { BRAND, NAV_LINKS, PRODUCTS, LEGAL_LINKS } from '@/lib/data'
 
@@ -10,7 +11,7 @@ export default function Footer() {
   const year = new Date().getFullYear()
 
   return (
-    <footer id="contact" className="bg-forest-800 text-cream-300 relative overflow-hidden" aria-label="Pied de page">
+    <footer id="contact" className="bg-forest-900 text-cream-300 relative overflow-hidden" aria-label="Pied de page">
       {/* ── Promo banner ── */}
       <div className="bg-forest-900 relative overflow-hidden">
         <div className="absolute inset-0 bg-grain opacity-[0.04] pointer-events-none" aria-hidden />
@@ -77,13 +78,14 @@ export default function Footer() {
                 </p>
               </div>
               <div className="w-20 h-20 rounded-lg bg-cream-50 p-1.5 flex-shrink-0">
-                <Image
-                  src="/images/qr-whatsapp.svg"
-                  alt="QR code WhatsApp pour commander"
-                  width={80}
-                  height={80}
-                  unoptimized
+                <QRCodeSVG
+                  value={BRAND.website}
+                  size={80}
+                  bgColor="transparent"
+                  fgColor="#1E4D2B"
+                  level="M"
                   className="w-full h-full"
+                  aria-label={`QR code vers ${BRAND.website}`}
                 />
               </div>
             </div>
@@ -107,21 +109,11 @@ export default function Footer() {
 
           </div>
         </div>
-
-        <div className="h-3 bg-chevron" aria-hidden />
-
-        <div className="border-t border-b border-gold-500/20 py-3 relative bg-gold-200/20">
-          <p className="text-center text-xs tracking-wide text-gold-400 font-medium flex items-center justify-center gap-1.5">
-            {BRAND.name} &ndash; {BRAND.slogan}
-            <Heart className="w-3 h-3 fill-current" />
-          </p>
-        </div>
-        <div className="h-3 bg-chevron" aria-hidden />
       </div>
 
       <div className="absolute inset-0 bg-grain opacity-[0.05] pointer-events-none" aria-hidden />
-
       <div className="max-w-7xl mx-auto px-6 lg:px-12 py-16 lg:py-20 relative">
+      <div className="h-px bg-white/10 mb-10" aria-hidden />
         <div className="grid sm:grid-cols-3 gap-10 lg:gap-12 mb-16">
 
           {/* ── Brand ── */}
@@ -245,6 +237,16 @@ export default function Footer() {
           </p>
         </div>
       </div>
+
+      <div className="h-3 bg-chevron" aria-hidden />
+
+      <div className="border-t border-b border-gold-500/20 py-3 relative bg-gold-200/20">
+        <p className="text-center text-xs tracking-wide text-gold-400 font-medium flex items-center justify-center gap-1.5">
+          {BRAND.name} &ndash; {BRAND.slogan}
+          <Heart className="w-3 h-3 fill-current" />
+        </p>
+      </div>
+      <div className="h-3 bg-chevron" aria-hidden />
     </footer>
   )
 }

@@ -10,7 +10,7 @@ const perks = [
   {
     icon: Package,
     title: 'Livraison rapide',
-    text: 'Partout en France et en Europe',
+    text: 'À Marseille et ses environs',
   },
   {
     icon: Leaf,

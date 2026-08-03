@@ -83,14 +83,15 @@ export default function Hero() {
 				className='absolute inset-0 pointer-events-none'
 				aria-hidden
 			>
-				<svg
-					className='absolute -top-8 -right-8 w-96 h-96 text-forest-700 opacity-[0.04] rotate-12'
-					viewBox='0 0 200 200'
-					fill='currentColor'
-				>
-					<path d='M100,10 C60,10 20,50 20,100 C20,140 50,175 90,188 C85,160 90,135 110,120 C125,108 145,108 155,95 C168,78 165,55 150,42 C135,68 118,78 100,90 C82,78 65,68 50,42 C35,55 32,78 45,95' />
-				</svg>
-				<svg
+				<Image
+					src='/images/tree-leaves.webp'
+					alt=''
+					width={384}
+					height={384}
+					className='absolute -top-20 right-0 w-full sm:w-2/3 lg:w-1/2 aspect-[636/384] object-contain opacity-10'
+					aria-hidden
+				/>
+				{/* <svg
 					className='absolute bottom-20 -left-12 w-80 h-80 text-gold-500 opacity-[0.04] -rotate-45'
 					viewBox='0 0 200 200'
 					fill='currentColor'
@@ -106,7 +107,7 @@ export default function Hero() {
 					/>
 					<path d='M100,50 Q130,70 100,90 Q70,70 100,50' />
 					<path d='M100,90 Q135,110 100,130 Q65,110 100,90' />
-				</svg>
+				</svg> */}
 				<div className='absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-gold-500/[0.03] blur-3xl' />
 			</motion.div>
 
